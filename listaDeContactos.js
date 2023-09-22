@@ -1,27 +1,63 @@
 const listaContactos = [
-  "Travis Barker",
-  "Tom Delonge",
-  "Mark Hoppus",
-  "Serj Tankian",
-  "Daron Malakian",
+  {
+    id: 100001,
+    nombres: "Travis Martin",
+    apellidos: "Barker Hells",
+    telefono: 3102543456,
+    ubicaciones: { ciudad: "Bogotá", dirección: "cl 1 # 10 - 100" },
+  },
+  {
+    id: 100002,
+    nombres: "Tom Edward",
+    apellidos: "Delonge Ray",
+    telefono: 3212673456,
+    ubicaciones: { ciudad: "Cali", dirección: "cl 2 # 19 - 20" },
+  },
+  {
+    id: 100003,
+    nombres: "Mark Peter",
+    apellidos: "Hoppus Diaz",
+    telefono: 3134096791,
+    ubicaciones: { ciudad: "Medellin", dirección: "cr 43 # 39 - 02" },
+  },
+  {
+    id: 100004,
+    nombres: "Serj Daniel",
+    apellidos: "Tankian Hoff",
+    telefono: 3114569873,
+    ubicaciones: { ciudad: "Bucaramanga", dirección: "tv 2 # 23 - 15" },
+  },
+  {
+    id: 100005,
+    nombres: "Daron Douglas",
+    apellidos: "Malakian Florez",
+    telefono: 3207653412,
+    ubicaciones: { ciudad: "Pereira", dirección: "cl 10 # 43 - 04" },
+  },
 ];
 
-let agregar = function (nuevoNombre) {
-  listaContactos.push(nuevoNombre);
+let agregar = function (cont) {
+  listaContactos.push(cont);
 };
 
-let borrar = function (num1, num2) {
-  listaContactos.splice(num1, num2);
+let borrar = function (ind, cant) {
+  listaContactos.splice(ind, cant);
 };
 
 let imprimirLista = function () {
   for (contacto of listaContactos) console.log(contacto);
 };
 
-agregar("Danny Marin");
+agregar({
+  id: 100006,
+  nombres: "Danny Alexander",
+  apellidos: "Marin Sanchez",
+  telefono: 3214070851,
+  ubicaciones: { ciudad: "Villavicencio", dirección: "Cl 12 # 18c - 30" },
+});
 console.log(listaContactos);
 
-borrar(2, 1);
+borrar(3, 1);
 console.log(listaContactos);
 
 imprimirLista();
